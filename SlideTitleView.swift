@@ -25,17 +25,17 @@ class SlideButton: UIButton {
     
     let bottomLabel: UILabel = {
         let label = UILabel()
-        label.font = fontWithSize(10)
-        label.textColor = CTColor.colors.ct_pullDownMenuTitleColor
+        label.font = UIFont.systemFont(ofSize: 10)
+        label.textColor = .black
         label.isHidden = true
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setTitleColor(CTColor.colors.ct_pullDownMenuTitleColor, for: .normal)
-        self.setTitleColor(CTColor.colors.ct_digListCellTitleColor, for: .selected)
-        self.titleLabel?.font = fontWithSize(14)
+        self.setTitleColor(.gray, for: .normal)
+        self.setTitleColor(.black, for: .selected)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         self.adjustsImageWhenHighlighted = false
         self.addSubview(bottomLabel)
     }
@@ -43,7 +43,7 @@ class SlideButton: UIButton {
     func setBottomTitle(title:String?) {
         bottomLabel.text = title
         if let titleString = title {
-            let size = NSString(string:titleString).size(withAttributes: [NSAttributedStringKey.font : fontWithSize(10)])
+            let size = NSString(string:titleString).size(withAttributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 10)])
             bottomLabel.frame = CGRect(x: (self.titleLabel?.frame.maxX)! + 3, y: (self.titleLabel?.frame.maxY)! - size.height , width: size.width, height: size.height)
         }
     }
