@@ -115,7 +115,7 @@ class SlideTitleView: UIView {
                 preButton.isSelected = false
                 sender.isSelected = true
                 selectedButton = sender
-                if let index = buttons.index(of: selectedButton as! SlideButton) {
+                if let index = buttons.firstIndex(of: selectedButton as! SlideButton) {
                     delegate?.titleViewDidSelectedIndex(index: index)
                 }
             }
@@ -126,7 +126,7 @@ class SlideTitleView: UIView {
             let buttonFrame = sender.frame
             slideBar.frame = CGRect(x:buttonFrame.origin.x + (buttonFrame.size.width - widthOfTitle(title: sender.title(for: .normal)!, fontSize:14))/2.0 , y: buttonFrame.size.height - kSlideBarHeight, width: widthOfTitle(title: sender.title(for: .normal)!, fontSize:14), height: kSlideBarHeight)
             
-            if let index = buttons.index(of: selectedButton as! SlideButton) {
+            if let index = buttons.firstIndex(of: selectedButton as! SlideButton) {
                 delegate?.titleViewDidSelectedIndex(index: index)
             }
         }
