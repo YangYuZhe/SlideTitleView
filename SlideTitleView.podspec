@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.name         = "SlideTitleView"
   s.version      = "0.0.1"
   s.summary      = "A slidable view for title"
-  s.swift_versions = "4.0"
+  s.swift_versions = "5.0"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
