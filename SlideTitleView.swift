@@ -42,7 +42,7 @@ class SlideButton: UIButton {
     func setBottomTitle(title:String?) {
         bottomLabel.text = title
         if let titleString = title {
-            let size = NSString(string:titleString).size(attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 10)])
+            let size = NSString(string:titleString).size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 10)])
             bottomLabel.frame = CGRect(x: (self.titleLabel?.frame.maxX)! + 3, y: (self.titleLabel?.frame.maxY)! - size.height , width: size.width, height: size.height)
         }
     }
@@ -141,7 +141,7 @@ extension SlideTitleView {
     
     // 计算文本长度
     func widthOfTitle(title:String, fontSize:CGFloat) -> CGFloat {
-        return NSString(string:title).size(withAttributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize:fontSize)]).width
+        return NSString(string:title).size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize:fontSize)]).width
     }
     
     // 外部事件联动选择按钮
