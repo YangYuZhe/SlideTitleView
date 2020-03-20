@@ -1,9 +1,8 @@
 //
 //  SlideTitleView.swift
-//  ChouTi
 //
-//  Created by 杨雨哲 on 2017/11/8.
-//  Copyright © 2017年 com.longdai. All rights reserved.
+//  Created by neo on 2017/11/8.
+//  Copyright © 2017年 com.neo. All rights reserved.
 //
 
 import UIKit
@@ -43,7 +42,7 @@ class SlideButton: UIButton {
     func setBottomTitle(title:String?) {
         bottomLabel.text = title
         if let titleString = title {
-            let size = NSString(string:titleString).size(withAttributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 10)])
+            let size = NSString(string:titleString).size(attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 10)])
             bottomLabel.frame = CGRect(x: (self.titleLabel?.frame.maxX)! + 3, y: (self.titleLabel?.frame.maxY)! - size.height , width: size.width, height: size.height)
         }
     }
@@ -66,9 +65,9 @@ class SlideTitleView: UIView {
     var delegate: SlideTitleViewDelegate?
     
     // 当前选中的按钮
-    private var selectedButton:UIButton?
+    var selectedButton:UIButton?
     
-    private var buttons = [SlideButton]()
+    var buttons = [SlideButton]()
 
     // 滑动条
     let slideBar:UIView = {
@@ -98,7 +97,7 @@ class SlideTitleView: UIView {
     }
     
     // 按钮被点击
-    @objc private func buttonClicked(sender:UIButton) {
+    @objc func buttonClicked(sender:UIButton) {
 
         if let preButton = selectedButton {
             if preButton != sender {
@@ -141,8 +140,8 @@ class SlideTitleView: UIView {
 extension SlideTitleView {
     
     // 计算文本长度
-    private func widthOfTitle(title:String, fontSize:CGFloat) -> CGFloat {
-        return NSString(string:title).size(withAttributes: [NSAttributedStringKey.font : fontWithSize(fontSize)]).width
+    func widthOfTitle(title:String, fontSize:CGFloat) -> CGFloat {
+        return NSString(string:title).size(withAttributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize:fontSize)]).width
     }
     
     // 外部事件联动选择按钮

@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   # s.description  = <<-DESC
                    
 
-  s.homepage     = "https://github.com/YangYuZhe/SlideTitleView"
+  s.homepage     = "https://github.com/yzneo/SlideTitleView"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -52,7 +52,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "Neo" => "neoyang.cn@gmail.com" }
+  s.author             = "neo"
   # Or just: s.author    = "yzwind"
   # s.authors            = { "yzwind" => "email@address.com" }
   # s.social_media_url   = "http://twitter.com/yzwind"
@@ -64,7 +64,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/YangYuZhe/SlideTitleView.git", :tag => "dev" }
+  s.source       = { :git => "https://github.com/YangYuZhe/SlideTitleView.git", :tag => "0.0.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
